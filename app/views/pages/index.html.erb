@@ -1,65 +1,389 @@
-<section class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)">
-	<div class="container mx-auto px-6 text-center py-20">
-		<h2 class="text-4xl font-bold mb-2 text-white">
-		  Welcome to Rails Kick Off!
-		</h2>
-		<h3 class="text-2xl mb-8 text-gray-200">
-		  Build products faster in Ruby on Rails
-		</h3>
-	</div>
-</section>
+<!-- component -->
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
 
-<section>
-  <div class="py-20 bg-gray-50 radius-for-skewed">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-wrap -mx-4">
-        <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-1/4 px-4">
-          <div class="relative flex items-center justify-center flex-shrink-0 w-14 h-14 mr-3 mb-4 md:mb-6 overflow-hidden bg-purple-500 rounded shadow-inner">
-            <i class="fas fa-wind text-white fa-2x"></i>
+<!-- This is an example component -->
+<div
+      class="bg-grayDark"
+    x-data="{ atTop: true }"
+    x-on:scroll.window="atTop =( window.pageYOffset > 10) ? false : true "
+     >
+    <!-- Navbar -->
+    <div
+      class="w-full text-gray-700 bg-white h-16 fixed top-0 animated z-40 border"
+      x-bind:class='{ "bg-black shadow-lg": !atTop }'
+    >
+      <div
+        x-data="{ open: false }"
+        class="flex flex-col max-w-screen-xl px-7 mx-auto md:items-center md:justify-between md:flex-row"
+      >
+        <div class="py-4 px-2 flex flex-row items-center justify-between">
+          <a
+            href="home.html"
+            class="tracking-widest rounded-lg focus:outline-none focus:shadow-outline"
+          >
+        <svg class="w-8 h-8 text-purple-600" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+          <title>TailwindCSS</title>
+          <path fill="currentColor" d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"></path>
+        </svg>
+          </a>
+           <div class="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
+                <div class="max-w-lg w-full lg:max-w-xs">
+                    <form accept-charset="UTF-8" action="/search" method="get">
+                        <label class="sr-only" for="search">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="h-5 w-5 text-gray-400" viewbox="0 0 20 20">
+                                <path clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" fill-rule="evenodd"></path></svg>
+                            </div><input class="block w-full pl-10 pr-40 py-2 border rounded-md leading-5 bg-white placeholder-gray-600 focus:outline-none focus:bg-white sm:text-sm transition duration-150 ease-in-out" id="q" name="q" placeholder="Search" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+          <!-- Button Mobile Nav -->
+          <button
+            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+            @click="open = !open"
+          >
+            <span class="text-lg text-primary">
+                <i class="fas fa-bell"></i >
+            </span>
+          </button>
+          <!-- End Button Mobile Nav -->
+        </div>
+        <!-- Navbar Mobile -->
+        <nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col flex-grow pb-4 hidden bg-white shadow-lg rounded-b"
+        >
+          <a
+            class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="#"
+            >Notifikasi 1</a
+          >
+          <a
+          class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="#"
+          >Notifikasi 1</a
+        >
+        <a
+        class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+        href="#"
+        >Notifikasi 1</a
+      >
+      <a
+      class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+      href="#"
+      >Notifikasi 1</a
+    >
+        </nav>
+        <!-- End Navbar Mobile -->
+        <nav class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row bg-white" >
+          <a class="flex items-center px-3 py-1 mt-2 text-lg font-semibold text-primary rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#" >
+            <i class="fas fa-envelope mt-1"></i>
+          </a>
+          <div
+            @click.away="open = false"
+            class="relative"
+            x-data="{ open: false }"
+          >
+            <button
+              @click="open = !open"
+              class="flex flex-row items-center w-full px-3 py-1 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            >
+              <span class="text-lg text-primary mt-1"
+                ><i class="fas fa-bell"></i
+              ></span>
+            </button>
+            <div
+              x-show="open"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+            >
+              <div class="px-2 py-2 bg-white rounded-md shadow">
+                <a
+                  class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#"
+                  >Notifikasi 1</a
+                >
+                <a
+                  class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#"
+                  >Notifikasi #2</a
+                >
+                <a
+                  class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#"
+                  >Notifikasi #3</a
+                >
+              </div>
+            </div>
           </div>
-          <h4 class="mb-4 text-2xl font-bold font-heading">Tailwind CSS</h4>
-          <p class="text-gray-500 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
-        </div>
-        <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-1/4 px-4">
-      
-          <div class="relative flex items-center justify-center flex-shrink-0 w-14 h-14 mr-3 mb-4 md:mb-6 overflow-hidden bg-purple-500 rounded shadow-inner">
-            <i class="fab fa-font-awesome-flag text-white fa-2x"></i>
+          <div
+            @click.away="open = false"
+            class="relative"
+            x-data="{ open: false }"
+          >
+            <button
+              @click="open = !open"
+              class="flex flex-row items-center w-full px-1 py-1 mt-2 text-sm font-semibold text-left bg-transparent rounded-full md:w-auto md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            >
+              <img src="https://randomuser.me/api/portraits/men/12.jpg" class="w-auto h-8 rounded-full" alt="" />
+            </button>
+
+            <div
+              x-show="open"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+            >
+              <div class="px-2 py-2 bg-white rounded-md shadow">
+                <a
+                  class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="forum.html"
+                  >Forum</a
+                >
+                <a
+                  class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="chat.html"
+                  >Chat</a
+                >
+                <a
+                  class="block px-4 py-2 mt-2  bg-transparent rounded-lg  text-sm font-semibold md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="#"
+                  >Link #3</a
+                >
+              </div>
+            </div>
           </div>
-
-
-          <h4 class="mb-4 text-2xl font-bold font-heading">Font Awesome Pro</h4>
-          <p class="text-gray-500 leading-loose">Ut tempus tellus ac nisi vestibulum tempus. Nunc tincidunt lectus libero, ac ultricies augue elementum at.</p>
-        </div>
-        <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-1/4 px-4">
-          <span class="mb-4 md:mb-6 inline-block bg-purple-500 p-3 text-white rounded">
-            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-          </span>
-          <h4 class="mb-4 text-2xl font-bold font-heading">Proin fringilla eleifend justo pellentesque</h4>
-          <p class="text-gray-500 leading-loose">Donec ut ligula nunc. Mauris blandit vel est et facilisis. Integer sapien felis, aliquet at posuere et, porttitor quis ligula.</p>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/4 px-4">
-          <span class="mb-4 md:mb-6 inline-block bg-purple-500 p-3 text-white rounded">
-            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-              <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
-            </svg>
-          </span>
-          <h4 class="mb-4 text-2xl font-bold font-heading">Morbi sagittis ligula sit amet elit maximus</h4>
-          <p class="text-gray-500 leading-loose">Duis ut facilisis orci. Morbi lacinia nunc a augue eleifend, sed placerat ex faucibus. Duis ante arcu, pretium ac luctus vulputate.</p>
-        </div>
+        </nav>
       </div>
     </div>
-  </div>
-  <div class="skew skew-bottom mr-for-radius">
-    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewBox="0 0 10 10" preserveAspectRatio="none">
-      <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
-    </svg>
-  </div>
-  <div class="skew skew-bottom ml-for-radius">
-    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewBox="0 0 10 10" preserveAspectRatio="none">
-      <polygon fill="currentColor" points="0 0 10 0 10 10"></polygon>
-    </svg>
-  </div>
-</section>
+    <!-- End Navbar -->
+</div>
+
+<script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    defer
+  ></script>
+<main class="flex-grow bg-gray-100 mt-16">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4">
+        <div class="lg:flex">
+            <div class="mb-4 lg:w-5/12 hidden lg:block">
+                <div class="bg-white shadow rounded-md p-4 md:p-4">
+                    <h3 class="text-lg md:text-lg font-bold">Product App is a community of 638,230 amazing product managers</h3>
+                    <div class="text-gray-700 flex justify-between py-2">
+                        <div>
+                            We're a place where product managers share, stay up-to-date and grow their careers.
+                        </div>
+                    </div>
+                    <a class="flex justify-center items-center bg-blue-500 text-white px-2 py-2 hover:bg-blue-600 rounded-md font-bold">
+                        <span>Create new account</span>
+                    </a>
+
+                    <a class="flex mt-2 justify-center items-center text-blue-700 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md font-bold text-gray-600">
+                        <span>Login</span>
+                    </a>
+                </div>
+                <nav class="flex-grow pb-4 mb-6 md:pb-0 md:overflow-y-auto">
+                    <a class="flex mt-4 items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-medium text-gray-600">
+                        <img src="https://img.icons8.com/color/25/000000/home.png"/>
+                        <span class="ml-3">Home</span>
+                    </a>
+                    <a class="flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-bold text-gray-600">
+                        <img src="https://img.icons8.com/color/25/000000/handshake.png"/>
+                        <span class="ml-3">Sign In/Up</span>
+                    </a>
+                </nav>
+                <nav class="flex-grow pb-4 md:pb-0 md:overflow-y-auto">
+                    <h3 class="font-bold p-2">Popular Tags</h3>
+                    <div>
+                        <a class="flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-normal text-gray-600">
+                        <span>#javascript</span>
+                        <a class="flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-normal text-gray-600">
+                        <span>#javascript</span>
+                        <a class="flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-normal text-gray-600">
+                        <span>#javascript</span>
+                        <a class="flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-normal text-gray-600">
+                        <span>#javascript</span>
+                    </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="lg:w-3/3 lg:pl-6">
+                <h2 class="mb-4 text-md md:text-lg font-bold">Posts</h2>
+                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                    <img src="https://picsum.photos/id/29/2106/1404" class="w-full h-72 object-cover" >
+                    <div class="px-6 py-4">
+                        <div class="align-bottom flex-col leading-none">
+                            <div class="flex flex-row items-center">
+                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                <div class="pl-2">
+                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
+                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                        </div>
+                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="far fa-heart"></i>
+                                <span class="ml-3">3 Reactions</span>
+                            </a>
+
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="fal fa-comments-alt"></i>
+                                <span class="ml-3">10 Comments</span>
+                            </a>
+                        </div>
+                  </div>
+                    
+                </article>
+
+                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                    <div class="px-6 py-4">
+                        <div class="align-bottom flex-col leading-none">
+                            <div class="flex flex-row items-center">
+                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                <div class="pl-2">
+                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
+                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                        </div>
+                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="far fa-heart"></i>
+                                <span class="ml-3">3 Reactions</span>
+                            </a>
+
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="fal fa-comments-alt"></i>
+                                <span class="ml-3">10 Comments</span>
+                            </a>
+                        </div>
+                  </div> 
+                </article>
+
+                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                    <img src="https://picsum.photos/id/29/2106/1404" class="w-full h-72 object-cover" >
+                    <div class="px-6 py-4">
+                        <div class="align-bottom flex-col leading-none">
+                            <div class="flex flex-row items-center">
+                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                <div class="pl-2">
+                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
+                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                        </div>
+                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="far fa-heart"></i>
+                                <span class="ml-3">3 Reactions</span>
+                            </a>
+
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="fal fa-comments-alt"></i>
+                                <span class="ml-3">10 Comments</span>
+                            </a>
+                        </div>
+                  </div>
+                    
+                </article>
+
+                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                    <div class="px-6 py-4">
+                        <div class="align-bottom flex-col leading-none">
+                            <div class="flex flex-row items-center">
+                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                <div class="pl-2">
+                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
+                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                        </div>
+                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="far fa-heart"></i>
+                                <span class="ml-3">3 Reactions</span>
+                            </a>
+
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="fal fa-comments-alt"></i>
+                                <span class="ml-3">10 Comments</span>
+                            </a>
+                        </div>
+                  </div> 
+                </article>
+
+                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                    <div class="px-6 py-4">
+                        <div class="align-bottom flex-col leading-none">
+                            <div class="flex flex-row items-center">
+                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                <div class="pl-2">
+                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
+                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                            <a href="" class="p-1">#javascript</a>
+                        </div>
+                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="far fa-heart"></i>
+                                <span class="ml-3">3 Reactions</span>
+                            </a>
+
+                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
+                                <i class="fal fa-comments-alt"></i>
+                                <span class="ml-3">10 Comments</span>
+                            </a>
+                        </div>
+                  </div> 
+                </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
