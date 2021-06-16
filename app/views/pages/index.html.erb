@@ -29,7 +29,7 @@
           <path fill="currentColor" d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"></path>
         </svg>
           </a>
-           <div class="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
+           <div class="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end hidden lg:block" >
                 <div class="max-w-lg w-full lg:max-w-xs">
                     <form accept-charset="UTF-8" action="/search" method="get">
                         <label class="sr-only" for="search">Search</label>
@@ -43,6 +43,9 @@
                 </div>
             </div>
           <!-- Button Mobile Nav -->
+          <a class="flex justify-center items-center bg-blue-500 text-white px-4 py-2 hover:bg-blue-600 rounded-md font-bold md:hidden ">
+                <span>Create Post</span>
+            </a>
           <button
             class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
             @click="open = !open"
@@ -83,9 +86,9 @@
 
 
         <nav class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row bg-white" >
-            <a class="flex justify-center items-center bg-blue-500 text-white px-4 py-2 hover:bg-blue-600 rounded-md font-bold">
-                <span>Create Post</span>
-            </a>
+        <a class="flex justify-center items-center bg-blue-500 text-white px-4 py-2 hover:bg-blue-600 rounded-md font-bold">
+            <span>Create Post</span>
+        </a>
           <a class="flex items-center px-3 py-1 mt-2 text-lg font-semibold text-primary rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#" >
             <i class="fas fa-envelope mt-1"></i>
           </a>
