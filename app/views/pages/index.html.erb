@@ -194,162 +194,45 @@
             </div>
             <div class="lg:w-3/3 lg:pl-6">
                 <h2 class="mb-4 text-md md:text-lg font-bold">Posts</h2>
-                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
-                    <img src="https://picsum.photos/id/29/2106/1404" class="w-full h-72 object-cover" />
-                    <div class="px-6 py-4">
-                        <div class="align-bottom flex-col leading-none">
-                            <div class="flex flex-row items-center">
-                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                <div class="pl-2">
-                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+
+
+                <% @posts.each do |post| %>
+                    <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                        <% if post.cover_image.present? %>
+                            <img src="<%= post.cover_image %>" class="w-full h-72 object-cover" />
+                        <% end %>
+                        <div class="px-6 py-4">
+                            <div class="align-bottom flex-col leading-none">
+                                <div class="flex flex-row items-center">
+                                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                    <div class="pl-2">
+                                        <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                        <p class="text-gray-700 text-xs mb-0"><%= post.created_at.strftime("%d %b") %> (5 hours ago)</p> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
-                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                        </div>
-                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="far fa-heart"></i>
-                                <span class="ml-3">3 Reactions</span>
-                            </a>
-
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="fal fa-comments-alt"></i>
-                                <span class="ml-3">10 Comments</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
-                    <div class="px-6 py-4">
-                        <div class="align-bottom flex-col leading-none">
-                            <div class="flex flex-row items-center">
-                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                <div class="pl-2">
-                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
-                                </div>
+                            <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600"><%= post.title %></h5>
+                            <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                                <a href="" class="p-1">#javascript</a>
+                                <a href="" class="p-1">#javascript</a>
+                                <a href="" class="p-1">#javascript</a>
+                            </div>
+                            <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                                <%= link_to post, class: "flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600" do %>
+                                    <i class="far fa-heart"></i>
+                                    <span class="ml-3">3 Reactions</span>
+                                <% end %>
+                       
+                                <%= link_to post, class: "flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600" do %>
+                                    <i class="fal fa-comments-alt"></i>
+                                    <span class="ml-3">10 Comments</span>
+                                <% end %>
+                              
                             </div>
                         </div>
-                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
-                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                        </div>
-                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="far fa-heart"></i>
-                                <span class="ml-3">3 Reactions</span>
-                            </a>
-
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="fal fa-comments-alt"></i>
-                                <span class="ml-3">10 Comments</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
-                    <img src="https://picsum.photos/id/29/2106/1404" class="w-full h-72 object-cover" />
-                    <div class="px-6 py-4">
-                        <div class="align-bottom flex-col leading-none">
-                            <div class="flex flex-row items-center">
-                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                <div class="pl-2">
-                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
-                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                        </div>
-                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="far fa-heart"></i>
-                                <span class="ml-3">3 Reactions</span>
-                            </a>
-
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="fal fa-comments-alt"></i>
-                                <span class="ml-3">10 Comments</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
-                    <div class="px-6 py-4">
-                        <div class="align-bottom flex-col leading-none">
-                            <div class="flex flex-row items-center">
-                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                <div class="pl-2">
-                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
-                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                        </div>
-                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="far fa-heart"></i>
-                                <span class="ml-3">3 Reactions</span>
-                            </a>
-
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="fal fa-comments-alt"></i>
-                                <span class="ml-3">10 Comments</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
-                    <div class="px-6 py-4">
-                        <div class="align-bottom flex-col leading-none">
-                            <div class="flex flex-row items-center">
-                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                <div class="pl-2">
-                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600">Realtime Notifications with ActionCable</h5>
-                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                            <a href="" class="p-1">#javascript</a>
-                        </div>
-                        <div class="flex pl-9 text-gray-600 font-normal text-sm">
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="far fa-heart"></i>
-                                <span class="ml-3">3 Reactions</span>
-                            </a>
-
-                            <a class="flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600">
-                                <i class="fal fa-comments-alt"></i>
-                                <span class="ml-3">10 Comments</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                <% end %>
+                
             </div>
         </div>
     </div>
