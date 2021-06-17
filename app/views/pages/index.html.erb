@@ -193,49 +193,48 @@
                 </nav>
             </div>
             <div class="lg:w-3/3 lg:pl-6">
-                <h2 class="mb-4 text-md md:text-lg font-bold">Posts</h2>
+                <h2 class="mb-4 text-xl md:text-xl font-bold">Posts</h2>
 
-
-                <% @posts.each do |post| %>
-                    <article class="bg-white rounded-lg mb-4 overflow-hidden shadow cursor-pointer">
-                        <% if post.cover_image.present? %>
-                            <%= link_to post, class: "w-full h-72 object-cover" do %>
-                                <img src="<%= post.cover_image %>" class="w-full h-72 object-cover" />
+                    <% @posts.each do |post| %>
+                        <article class="bg-white rounded-lg mb-4 overflow-hidden shadow cursor-pointer">
+                            <% if post == @posts.first %>
+                                <%= link_to post, class: "w-full h-72 object-cover" do %>
+                                    <img src="<%= post.cover_image %>" class="w-full h-72 object-cover" />
+                                <% end %>
                             <% end %>
-                        <% end %>
-                        <div class="px-6 py-4">
-                            <div class="align-bottom flex-col leading-none">
-                                <div class="flex flex-row items-center">
-                                    <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                    <div class="pl-2">
-                                        <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                        <p class="text-gray-700 text-xs mb-0"><%= post.created_at.strftime("%d %b") %> (5 hours ago)</p> 
+                            <div class="px-6 py-4">
+                                <div class="align-bottom flex-col leading-none">
+                                    <div class="flex flex-row items-center">
+                                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                        <div class="pl-2">
+                                            <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                            <p class="text-gray-700 text-xs mb-0"><%= post.created_at.strftime("%d %b") %> (5 hours ago)</p> 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <%= link_to post do %>
-                                <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 hover:text-blue-900 group-hover:text-indigo-600"><%= post.title %></h5>
-                            <% end %>
-                            <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
-                                <a href="" class="p-1">#javascript</a>
-                                <a href="" class="p-1">#javascript</a>
-                                <a href="" class="p-1">#javascript</a>
-                            </div>
-                            <div class="flex pl-9 text-gray-600 font-normal text-sm">
-                                <%= link_to post, class: "flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600" do %>
-                                    <i class="far fa-heart"></i>
-                                    <span class="ml-3">3 Reactions</span>
+                                <%= link_to post do %>
+                                    <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 hover:text-blue-900 group-hover:text-indigo-600"><%= post.title %></h5>
                                 <% end %>
-                       
-                                <%= link_to post, class: "flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600" do %>
-                                    <i class="fal fa-comments-alt"></i>
-                                    <span class="ml-3">10 Comments</span>
-                                <% end %>
-                              
+                                <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
+                                    <a href="" class="p-1">#javascript</a>
+                                    <a href="" class="p-1">#javascript</a>
+                                    <a href="" class="p-1">#javascript</a>
+                                </div>
+                                <div class="flex pl-9 text-gray-600 font-normal text-sm">
+                                    <%= link_to post, class: "flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600" do %>
+                                        <i class="far fa-heart"></i>
+                                        <span class="ml-3">3 Reactions</span>
+                                    <% end %>
+                           
+                                    <%= link_to post, class: "flex items-center text-gray-900 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md text-gray-600" do %>
+                                        <i class="fal fa-comments-alt"></i>
+                                        <span class="ml-3">10 Comments</span>
+                                    <% end %>
+                                  
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                <% end %>
+                        </article>
+                    <% end %>
                 
             </div>
         </div>
