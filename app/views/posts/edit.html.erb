@@ -1,6 +1,25 @@
-<h1>Editing Post</h1>
+<main class="flex-grow bg-gray-100 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4">
+        <div class="lg:flex">
+            <div class="lg:w-1/12">
+                
+            </div>
+            <div class="lg:w-8/12">
+                <div class="bg-white rounded-lg mb-4 overflow-hidden shadow">
 
-<%= render 'form', post: @post %>
+                    <div class="px-6 py-4">
 
-<%= link_to 'Show', @post %> |
+						<%= render 'form', post: @post %>
+
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-4/12">
+                
+            </div>
+        </div>
+    </div>
+
 <%= link_to 'Back', posts_path %>
+
+</main>
