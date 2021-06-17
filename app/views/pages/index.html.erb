@@ -2,28 +2,40 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4">
         <div class="lg:flex">
             <div class="mb-4 lg:w-5/12 hidden lg:block">
-                <div class="bg-white shadow rounded-md p-4 md:p-4">
-                    <h3 class="text-lg md:text-lg font-bold">Product App is a community of amazing product managers</h3>
-                    <div class="text-gray-700 flex justify-between py-2">
-                        <div>
-                            We're a place where product managers share, stay up-to-date and grow their careers.
-                        </div>
-                    </div>
-                    <%= link_to "Create new account", new_user_registration_path, class: "flex justify-center items-center bg-blue-500 text-white px-2 py-2 hover:bg-blue-600 rounded-md font-bold" %>
 
-                    <%= link_to "Login", new_user_session_path, class: "flex mt-2 justify-center items-center text-blue-700 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md font-bold text-gray-600" %>
-                </div>
+                <% if user_signed_in? %>
+                    
+
+                <% else %>
+                    <div class="bg-white shadow rounded-md p-4 md:p-4">
+                        <h3 class="text-lg md:text-lg font-bold">Product App is a community of amazing product managers</h3>
+                        <div class="text-gray-700 flex justify-between py-2">
+                            <div>
+                                We're a place where product managers share, stay up-to-date and grow their careers.
+                            </div>
+                        </div>
+                        <%= link_to "Create new account", new_user_registration_path, class: "flex justify-center items-center bg-blue-500 text-white px-2 py-2 hover:bg-blue-600 rounded-md font-bold" %>
+
+                        <%= link_to "Login", new_user_session_path, class: "flex mt-2 justify-center items-center text-blue-700 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md font-bold text-gray-600" %>
+                    </div>
+                <% end %>
                 <nav class="flex-grow pb-4 mb-6 md:pb-0 md:overflow-y-auto">
+
                     <a href="/" class="flex mt-4 items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-medium text-gray-600">
                         <img src="https://img.icons8.com/color/25/000000/home.png" />
                         <span class="ml-3">Home</span>
                     </a>
 
-                    <%= link_to new_user_session_path, class: "flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-bold text-gray-600" do %>
-                        <img src="https://img.icons8.com/color/25/000000/handshake.png" />
-                        <span class="ml-3">Sign In/Up</span>
-                    <% end %>
+                    <% if user_signed_in? %>
 
+
+                    <% else %>
+
+                        <%= link_to new_user_session_path, class: "flex items-center text-gray-900 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-600 hover:bg-opacity-25 rounded-md font-bold text-gray-600" do %>
+                            <img src="https://img.icons8.com/color/25/000000/handshake.png" />
+                            <span class="ml-3">Sign In/Up</span>
+                        <% end %>
+                    <% end %>
                 </nav>
                 <nav class="flex-grow pb-4 md:pb-0 md:overflow-y-auto">
                     <h3 class="font-bold p-2">Popular Tags</h3>
