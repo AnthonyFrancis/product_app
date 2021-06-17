@@ -10,19 +10,12 @@
     scrollbar-width: none;  /* Firefox */
 }
 
-#demo {
-  overflow: hidden;
-  height: 100px;
-  width: 600px;
-}
-
 </style>
 
 <script type="text/javascript">
-  function autoheight(x) {
-    x.style.height = "5px";
-    x.style.height = (15+x.scrollHeight)+"px";
-  }
+  document.addEventListener('turbolinks:load', function() {
+      autosize(document.querySelectorAll('.story'));
+  }, false);
 </script>
 
 <div class="flex mb-2 text-gray-600 font-medium text-sm">
@@ -39,7 +32,7 @@
       </div>
     <% end %>
 
-    <div class="pl-10 py-5">
+    <div class="pl-10 pt-5">
       <div class="mb-4">
         <button class="focus:outline-none px-4 py-2 text-base text-center cursor-pointer hover:shadow-sm text-gray-900 bg-white border-gray-300 border-2 rounded-lg hover:bg-gray-100" type="button">
           <label for="file">
@@ -53,7 +46,10 @@
       </div>
 
       <div>
-      <%= form.text_area :title, :onkeyup => 'autoheight(this)', placeholder: "New post title here...", class: "w-full break-words placeholder-gray-600 text-6xl resize-none focus:outline-none autoexpand overflow:hidden tracking-wide no-scrollbar text-black  text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600" %>
+
+      <%= form.text_area :title, placeholder: "New post title here...", class: "story w-full break-words placeholder-gray-600 text-6xl resize-none focus:outline-none autoexpand overflow:hidden tracking-wide no-scrollbar text-black  text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600" %>
+
+
       </div>
     </div>
 
