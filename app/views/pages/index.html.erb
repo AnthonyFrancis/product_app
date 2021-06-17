@@ -68,9 +68,9 @@
                             <div class="px-6 py-4">
                                 <div class="align-bottom flex-col leading-none">
                                     <div class="flex flex-row items-center">
-                                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                        <img alt="Placeholder" class="block rounded-full w-8" src="<%= post.user.profile_image %>" />
                                         <div class="pl-2">
-                                            <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                            <p class="text-sm font-semibold text-gray-800"><%= post.user.name %></p>
                                             <p class="text-gray-700 text-xs mb-0"><%= post.created_at.strftime("%d %b") %> (5 hours ago)</p> 
                                         </div>
                                     </div>
