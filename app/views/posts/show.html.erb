@@ -1,7 +1,19 @@
+<style type="text/css">
+    .trix ul {
+  list-style-type: disc;
+  padding-left: 2.5rem;
+}
+
+.trix ol {
+  list-style-type: decimal;
+  padding-left: 2.5rem;
+}
+</style>
+
 <main class="flex-grow bg-gray-100 mt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4">
-        <div class="lg:flex">
-            <div class="lg:w-1/12">
+        <div class="flex">
+            <div class="lg:w-1/12 w-full">
                 <nav class="pb-4 md:pb-0 md:overflow-y-auto">
                     <div>
                         <i class="far fa-heart fa-lg"></i>
@@ -18,421 +30,424 @@
                     </div>
                 </nav>
             </div>
-            <div class="lg:w-8/12 px-4">
-                <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
-                    <img src="<%= @post.cover_image %>" class="w-full h-72 object-cover" />
-                    <header class="px-6 py-4">
-                        <h5 class="pl-10 text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600"><%= @post.title %></h5>
-                        <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm"><a href="" class="p-1">#javascript</a> <a href="" class="p-1">#javascript</a> <a href="" class="p-1">#javascript</a></div>
-                        <div class="pl-10 align-bottom flex-col leading-none">
-                            <div class="flex flex-row items-center">
-                                <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
-                                <div class="pl-2">
-                                    <p class="text-sm font-semibold text-gray-800">John Doe</p>
-                                    <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                <div class="lg:w-8/12 px-4 w-full">
+                    <main>
+                        <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                            <img src="<%= @post.cover_image %>" class="w-full h-72 object-cover" />
+                            <header class="px-6 py-4">
+                                <h5 class="pl-10 text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600"><%= @post.title %></h5>
+                                <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm"><a href="" class="p-1">#javascript</a> <a href="" class="p-1">#javascript</a> <a href="" class="p-1">#javascript</a></div>
+                                <div class="pl-10 align-bottom flex-col leading-none">
+                                    <div class="flex flex-row items-center">
+                                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                                        <div class="pl-2">
+                                            <p class="text-sm font-semibold text-gray-800">John Doe</p>
+                                            <p class="text-gray-700 text-xs mb-0">Jun 16 (5 hours ago)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="px-6 py-4">
+                                <div class="px-10 text-xl font-normal">
+                                    <%= @post.body %>
                                 </div>
                             </div>
-                        </div>
-                    </header>
-                    <div class="px-6 py-4">
-                        <div class="px-10 text-xl font-normal">
-                            <%= @post.body %>
-                        </div>
-                    </div>
-                    <div class="px-6 py-4">
-                        <div class="px-10 text-xl font-normal">
-                            <div class="mt-4">
-                                <h3 class="font-semibold leading-10">Discussion</h3>
-                                <div id="discussion" data-controller="discussion" data-id="setting-up-customer-support-models-with-hotwire-discussion">
-                                    <div class="forum_post flex flex-row mb-2 group p-4 rounded-md text-sm hover:bg-gray-50" id="forum_post_19116">
-                                        <div class="hidden lg:block lg:mr-3 flex-shrink-0">
-                                            <a href="/users/1242">
-                                                <img
-                                                    data-src="https://secure.gravatar.com/avatar/c643841498790d566a253e140cc28611.png?height=48&amp;width=48&amp;d=mm"
-                                                    class="rounded-full"
-                                                    height="36"
-                                                    width="36"
-                                                    alt="Alisson Patrick"
-                                                    src="https://secure.gravatar.com/avatar/c643841498790d566a253e140cc28611.png?height=48&amp;width=48&amp;d=mm"
-                                                />
-                                            </a>
-                                        </div>
-                                        <div class="min-w-0 flex-grow">
-                                            <div class="">
-                                                <div class="h6 my-0 flex justify-between mb-2">
+                            <div class="px-6 py-4">
+                                <div class="px-10 text-xl font-normal">
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold leading-10">Discussion</h3>
+                                        <div id="discussion" data-controller="discussion" data-id="setting-up-customer-support-models-with-hotwire-discussion">
+                                            <div class="forum_post flex flex-row mb-2 group p-4 rounded-md text-sm hover:bg-gray-50" id="forum_post_19116">
+                                                <div class="hidden lg:block lg:mr-3 flex-shrink-0">
+                                                    <a href="/users/1242">
+                                                        <img
+                                                            data-src="https://secure.gravatar.com/avatar/c643841498790d566a253e140cc28611.png?height=48&amp;width=48&amp;d=mm"
+                                                            class="rounded-full"
+                                                            height="36"
+                                                            width="36"
+                                                            alt="Alisson Patrick"
+                                                            src="https://secure.gravatar.com/avatar/c643841498790d566a253e140cc28611.png?height=48&amp;width=48&amp;d=mm"
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="min-w-0 flex-grow">
+                                                    <div class="">
+                                                        <div class="h6 my-0 flex justify-between mb-2">
+                                                            <div>
+                                                                <a class="text-indigo-600 font-semibold hover:text-indigo-500" href="/users/1242">
+                                                                    Alisson Patrick
+                                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800">
+                                                                        23,290 XP
+                                                                    </span>
+                                                                </a>
+                                                                <small class="text-gray-800">
+                                                                    ·
+                                                                    <a class="hover:underline" href="https://gorails.com/forum/setting-up-customer-support-models-with-hotwire-discussion#forum_post_19116">
+                                                                        <time datetime="2021-04-28T18:44:20Z" data-local="time-ago" title="April 28, 2021 at 7:44pm BST" aria-label="on Apr 28">on Apr 28</time>
+                                                                    </a>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2 prose">
+                                                            <p>It's for useful episodes like this, that I'm here since 2014. Super thank you!</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="replies">
+                                                        <div data-controller="reply" class="text-xs">
+                                                            <a class="text-gray-500 ml-2" data-action="click->reply#show" href="#"><i class="fas fa-reply" aria-hidden="true"></i> Reply</a>
+                                                            <div class="forum_post">
+                                                                <form
+                                                                    class="hidden"
+                                                                    data-target="reply.form"
+                                                                    action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts"
+                                                                    accept-charset="UTF-8"
+                                                                    data-remote="true"
+                                                                    method="post"
+                                                                >
+                                                                    <input type="hidden" name="authenticity_token" value="DtBqhfxT5P2v1CPYX28IyaNdezvdUNOH+3lDBjtQSR+AARDwohJqL5buH9Rhech73fw60OOkAygtO0iArWw7IQ==" />
+                                                                    <div class="topic_1623857108">
+                                                                        <style media="screen">
+                                                                            .topic_1623857108 {
+                                                                                position: absolute !important;
+                                                                                height: 1px;
+                                                                                width: 1px;
+                                                                                overflow: hidden;
+                                                                            }
+                                                                        </style>
+                                                                        <label for="forum_post_topic">If you are a human, ignore this field</label>
+                                                                        <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
+                                                                    </div>
+                                                                    <div class="form-group mt-3">
+                                                                        <textarea placeholder="Add a comment" id="comment_1631" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
+                                                                    </div>
+                                                                    <div class="form-group text-right">
+                                                                        <input value="19116" type="hidden" name="forum_post[parent_id]" />
+                                                                        <span class="inline-flex rounded-md shadow-sm">
+                                                                            <button
+                                                                                name="button"
+                                                                                type="submit"
+                                                                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                                                                                data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
+                                                                                tabindex="2"
+                                                                            >
+                                                                                Comment
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="relative inline-block text-left">
                                                     <div>
-                                                        <a class="text-indigo-600 font-semibold hover:text-indigo-500" href="/users/1242">
-                                                            Alisson Patrick
-                                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800">
-                                                                23,290 XP
-                                                            </span>
-                                                        </a>
-                                                        <small class="text-gray-800">
-                                                            ·
-                                                            <a class="hover:underline" href="https://gorails.com/forum/setting-up-customer-support-models-with-hotwire-discussion#forum_post_19116">
-                                                                <time datetime="2021-04-28T18:44:20Z" data-local="time-ago" title="April 28, 2021 at 7:44pm BST" aria-label="on Apr 28">on Apr 28</time>
-                                                            </a>
-                                                        </small>
+                                                        <button @click="open = !open" class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                                                            </svg>
+                                                        </button>
                                                     </div>
-                                                </div>
-                                                <div class="mb-2 prose">
-                                                    <p>It's for useful episodes like this, that I'm here since 2014. Super thank you!</p>
-                                                </div>
-                                            </div>
-                                            <div class="replies">
-                                                <div data-controller="reply" class="text-xs">
-                                                    <a class="text-gray-500 ml-2" data-action="click->reply#show" href="#"><i class="fas fa-reply" aria-hidden="true"></i> Reply</a>
-                                                    <div class="forum_post">
-                                                        <form
-                                                            class="hidden"
-                                                            data-target="reply.form"
-                                                            action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts"
-                                                            accept-charset="UTF-8"
-                                                            data-remote="true"
-                                                            method="post"
-                                                        >
-                                                            <input type="hidden" name="authenticity_token" value="DtBqhfxT5P2v1CPYX28IyaNdezvdUNOH+3lDBjtQSR+AARDwohJqL5buH9Rhech73fw60OOkAygtO0iArWw7IQ==" />
-                                                            <div class="topic_1623857108">
-                                                                <style media="screen">
-                                                                    .topic_1623857108 {
-                                                                        position: absolute !important;
-                                                                        height: 1px;
-                                                                        width: 1px;
-                                                                        overflow: hidden;
-                                                                    }
-                                                                </style>
-                                                                <label for="forum_post_topic">If you are a human, ignore this field</label>
-                                                                <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
-                                                            </div>
-                                                            <div class="form-group mt-3">
-                                                                <textarea placeholder="Add a comment" id="comment_1631" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
-                                                            </div>
-                                                            <div class="form-group text-right">
-                                                                <input value="19116" type="hidden" name="forum_post[parent_id]" />
-                                                                <span class="inline-flex rounded-md shadow-sm">
-                                                                    <button
-                                                                        name="button"
-                                                                        type="submit"
-                                                                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
-                                                                        data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
-                                                                        tabindex="2"
-                                                                    >
-                                                                        Comment
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="relative inline-block text-left">
-                                            <div>
-                                                <button @click="open = !open" class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <div
-                                                x-show="open"
-                                                style="display: none;"
-                                                x-transition:enter="transition ease-out duration-100"
-                                                x-transition:enter-start="transform opacity-0 scale-95"
-                                                x-transition:enter-end="transform opacity-100 scale-100"
-                                                x-transition:leave="transition ease-in duration-75"
-                                                x-transition:leave-start="transform opacity-100 scale-100"
-                                                x-transition:leave-end="transform opacity-0 scale-95"
-                                                class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
-                                            >
-                                                <div class="rounded-md bg-white shadow-xs">
-                                                    <div class="py-1">
-                                                        <a
-                                                            data-confirm="Are you sure you want to mark this post as spam?"
-                                                            class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                                            rel="nofollow"
-                                                            data-method="put"
-                                                            href="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts/19116/report"
-                                                        >
-                                                            Report spam
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="forum_post flex flex-row mb-2 group p-4 rounded-md text-sm hover:bg-gray-50" id="forum_post_19118">
-                                        <div class="hidden lg:block lg:mr-3 flex-shrink-0">
-                                            <a href="/users/416">
-                                                <img
-                                                    data-src="https://secure.gravatar.com/avatar/dfb992788957e60e6b6deef34585415a.png?height=48&amp;width=48&amp;d=mm"
-                                                    class="rounded-full"
-                                                    height="36"
-                                                    width="36"
-                                                    alt="Abhinay kumar"
-                                                    src="https://secure.gravatar.com/avatar/dfb992788957e60e6b6deef34585415a.png?height=48&amp;width=48&amp;d=mm"
-                                                />
-                                            </a>
-                                        </div>
-                                        <div class="min-w-0 flex-grow">
-                                            <div class="">
-                                                <div class="h6 my-0 flex justify-between mb-2">
-                                                    <div>
-                                                        <a class="text-indigo-600 font-semibold hover:text-indigo-500" href="/users/416">
-                                                            Abhinay kumar
-                                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800">
-                                                                2,810 XP
-                                                            </span>
-                                                        </a>
-                                                        <small class="text-gray-800">
-                                                            ·
-                                                            <a class="hover:underline" href="https://gorails.com/forum/setting-up-customer-support-models-with-hotwire-discussion#forum_post_19118">
-                                                                <time datetime="2021-04-29T03:23:55Z" data-local="time-ago" title="April 29, 2021 at 4:23am BST" aria-label="on Apr 29">on Apr 29</time>
-                                                            </a>
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2 prose">
-                                                    <p>super neat video about hotwire and for the first time no bugs related to hotwire during the recording(or a sharp video editing) :P. Also, 1.25X speed is the best</p>
-                                                </div>
-                                            </div>
-                                            <div class="replies">
-                                                <div data-controller="reply" class="text-xs">
-                                                    <a class="text-gray-500 ml-2" data-action="click->reply#show" href="#"><i class="fas fa-reply" aria-hidden="true"></i> Reply</a>
-                                                    <div class="forum_post">
-                                                        <form
-                                                            class="hidden"
-                                                            data-target="reply.form"
-                                                            action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts"
-                                                            accept-charset="UTF-8"
-                                                            data-remote="true"
-                                                            method="post"
-                                                        >
-                                                            <input type="hidden" name="authenticity_token" value="3h62GG/8nLXiOfJfHAoJC8Jg3q1ymzFjQQdMshtgajBQz8xtMb0SZ9sDzlMiHMm5vMGfRkxv4cyXRUc0jVwYDg==" />
-                                                            <div class="topic_1623857108">
-                                                                <style media="screen">
-                                                                    .topic_1623857108 {
-                                                                        position: absolute !important;
-                                                                        top: -9999px;
-                                                                        left: -9999px;
-                                                                    }
-                                                                </style>
-                                                                <label for="forum_post_topic">If you are a human, ignore this field</label>
-                                                                <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
-                                                            </div>
-                                                            <div class="form-group mt-3">
-                                                                <textarea placeholder="Add a comment" id="comment_98567" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
-                                                            </div>
-                                                            <div class="form-group text-right">
-                                                                <input value="19118" type="hidden" name="forum_post[parent_id]" />
-                                                                <span class="inline-flex rounded-md shadow-sm">
-                                                                    <button
-                                                                        name="button"
-                                                                        type="submit"
-                                                                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
-                                                                        data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
-                                                                        tabindex="2"
-                                                                    >
-                                                                        Comment
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="relative inline-block text-left">
-                                            <div>
-                                                <button @click="open = !open" class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <div
-                                                x-show="open"
-                                                style="display: none;"
-                                                x-transition:enter="transition ease-out duration-100"
-                                                x-transition:enter-start="transform opacity-0 scale-95"
-                                                x-transition:enter-end="transform opacity-100 scale-100"
-                                                x-transition:leave="transition ease-in duration-75"
-                                                x-transition:leave-start="transform opacity-100 scale-100"
-                                                x-transition:leave-end="transform opacity-0 scale-95"
-                                                class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
-                                            >
-                                                <div class="rounded-md bg-white shadow-xs">
-                                                    <div class="py-1">
-                                                        <a
-                                                            data-confirm="Are you sure you want to mark this post as spam?"
-                                                            class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                                            rel="nofollow"
-                                                            data-method="put"
-                                                            href="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts/19118/report"
-                                                        >
-                                                            Report spam
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="forum_post flex flex-row mb-2 group p-4 rounded-md text-sm hover:bg-gray-50" id="forum_post_19129">
-                                        <div class="hidden lg:block lg:mr-3 flex-shrink-0">
-                                            <a href="/users/16902">
-                                                <img
-                                                    data-src="https://secure.gravatar.com/avatar/4e5de4125ce3e7338a4df8efe12d100b.png?height=48&amp;width=48&amp;d=mm"
-                                                    class="rounded-full"
-                                                    height="36"
-                                                    width="36"
-                                                    alt="Bilal Budhani"
-                                                    src="https://secure.gravatar.com/avatar/4e5de4125ce3e7338a4df8efe12d100b.png?height=48&amp;width=48&amp;d=mm"
-                                                />
-                                            </a>
-                                        </div>
-                                        <div class="min-w-0 flex-grow">
-                                            <div class="">
-                                                <div class="h6 my-0 flex justify-between mb-2">
-                                                    <div>
-                                                        <a class="text-indigo-600 font-semibold hover:text-indigo-500" href="/users/16902">
-                                                            Bilal Budhani
-                                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800">
-                                                                130 XP
-                                                            </span>
-                                                        </a>
-                                                        <small class="text-gray-800">
-                                                            ·
-                                                            <a class="hover:underline" href="https://gorails.com/forum/setting-up-customer-support-models-with-hotwire-discussion#forum_post_19129">
-                                                                <time datetime="2021-04-30T14:53:06Z" data-local="time-ago" title="April 30, 2021 at 3:53pm BST" aria-label="on Apr 30">on Apr 30</time>
-                                                            </a>
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-2 prose">
-                                                    <p>Great video, This is going to be an amazing series. Looking forward to upcoming episodes.</p>
-                                                </div>
-                                            </div>
-                                            <div class="replies">
-                                                <div data-controller="reply" class="text-xs">
-                                                    <a class="text-gray-500 ml-2" data-action="click->reply#show" href="#"><i class="fas fa-reply" aria-hidden="true"></i> Reply</a>
-                                                    <div class="forum_post">
-                                                        <form
-                                                            class="hidden"
-                                                            data-target="reply.form"
-                                                            action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts"
-                                                            accept-charset="UTF-8"
-                                                            data-remote="true"
-                                                            method="post"
-                                                        >
-                                                            <input type="hidden" name="authenticity_token" value="hTEAvRuXjKCSADChGYXUyE+xrBBDGLvrn7HpXgzuUa8L4HrIRdYCcqs6DK0nkxR6MRDt+33sa0RJ8+LYmtIjkQ==" />
-                                                            <div class="topic_1623857108">
-                                                                <style media="screen">
-                                                                    .topic_1623857108 {
-                                                                        position: absolute !important;
-                                                                        top: -9999px;
-                                                                        left: -9999px;
-                                                                    }
-                                                                </style>
-                                                                <label for="forum_post_topic">If you are a human, ignore this field</label>
-                                                                <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
-                                                            </div>
-                                                            <div class="form-group mt-3">
-                                                                <textarea placeholder="Add a comment" id="comment_62850" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
-                                                            </div>
-                                                            <div class="form-group text-right">
-                                                                <input value="19129" type="hidden" name="forum_post[parent_id]" />
-                                                                <span class="inline-flex rounded-md shadow-sm">
-                                                                    <button
-                                                                        name="button"
-                                                                        type="submit"
-                                                                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
-                                                                        data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
-                                                                        tabindex="2"
-                                                                    >
-                                                                        Comment
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="relative inline-block text-left">
-                                            <div>
-                                                <button @click="open = !open" class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <div
-                                                x-show="open"
-                                                style="display: none;"
-                                                x-transition:enter="transition ease-out duration-100"
-                                                x-transition:enter-start="transform opacity-0 scale-95"
-                                                x-transition:enter-end="transform opacity-100 scale-100"
-                                                x-transition:leave="transition ease-in duration-75"
-                                                x-transition:leave-start="transform opacity-100 scale-100"
-                                                x-transition:leave-end="transform opacity-0 scale-95"
-                                                class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
-                                            >
-                                                <div class="rounded-md bg-white shadow-xs">
-                                                    <div class="py-1">
-                                                        <a
-                                                            data-confirm="Are you sure you want to mark this post as spam?"
-                                                            class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                                                            rel="nofollow"
-                                                            data-method="put"
-                                                            href="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts/19129/report"
-                                                        >
-                                                            Report spam
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="forum_post">
-                                        <form class="" data-target="reply.form" action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts" accept-charset="UTF-8" data-remote="true" method="post">
-                                            <input type="hidden" name="authenticity_token" value="gAdBUsnwrQ55Qr0hvZQfADnvyQcrleQH8ybVJ4s9HHUO1jsnl7Ej3EB4gS2Dgt+yR06I7BVhNKglZN6hHQFuSw==" />
-                                            <div class="topic_1623857108">
-                                                <style media="screen">
-                                                    .topic_1623857108 {
-                                                        position: absolute !important;
-                                                        height: 1px;
-                                                        width: 1px;
-                                                        overflow: hidden;
-                                                    }
-                                                </style>
-                                                <label for="forum_post_topic">If you are a human, ignore this field</label>
-                                                <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
-                                            </div>
-                                            <div class="form-group mt-3">
-                                                <textarea placeholder="Add a comment" id="comment_52741" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
-                                            </div>
-                                            <div class="form-group text-right">
-                                                <span class="inline-flex rounded-md shadow-sm">
-                                                    <button
-                                                        name="button"
-                                                        type="submit"
-                                                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
-                                                        data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
-                                                        tabindex="2"
+                                                    <div
+                                                        x-show="open"
+                                                        style="display: none;"
+                                                        x-transition:enter="transition ease-out duration-100"
+                                                        x-transition:enter-start="transform opacity-0 scale-95"
+                                                        x-transition:enter-end="transform opacity-100 scale-100"
+                                                        x-transition:leave="transition ease-in duration-75"
+                                                        x-transition:leave-start="transform opacity-100 scale-100"
+                                                        x-transition:leave-end="transform opacity-0 scale-95"
+                                                        class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
                                                     >
-                                                        Comment
-                                                    </button>
-                                                </span>
+                                                        <div class="rounded-md bg-white shadow-xs">
+                                                            <div class="py-1">
+                                                                <a
+                                                                    data-confirm="Are you sure you want to mark this post as spam?"
+                                                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                                                    rel="nofollow"
+                                                                    data-method="put"
+                                                                    href="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts/19116/report"
+                                                                >
+                                                                    Report spam
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </form>
+                                            <div class="forum_post flex flex-row mb-2 group p-4 rounded-md text-sm hover:bg-gray-50" id="forum_post_19118">
+                                                <div class="hidden lg:block lg:mr-3 flex-shrink-0">
+                                                    <a href="/users/416">
+                                                        <img
+                                                            data-src="https://secure.gravatar.com/avatar/dfb992788957e60e6b6deef34585415a.png?height=48&amp;width=48&amp;d=mm"
+                                                            class="rounded-full"
+                                                            height="36"
+                                                            width="36"
+                                                            alt="Abhinay kumar"
+                                                            src="https://secure.gravatar.com/avatar/dfb992788957e60e6b6deef34585415a.png?height=48&amp;width=48&amp;d=mm"
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="min-w-0 flex-grow">
+                                                    <div class="">
+                                                        <div class="h6 my-0 flex justify-between mb-2">
+                                                            <div>
+                                                                <a class="text-indigo-600 font-semibold hover:text-indigo-500" href="/users/416">
+                                                                    Abhinay kumar
+                                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800">
+                                                                        2,810 XP
+                                                                    </span>
+                                                                </a>
+                                                                <small class="text-gray-800">
+                                                                    ·
+                                                                    <a class="hover:underline" href="https://gorails.com/forum/setting-up-customer-support-models-with-hotwire-discussion#forum_post_19118">
+                                                                        <time datetime="2021-04-29T03:23:55Z" data-local="time-ago" title="April 29, 2021 at 4:23am BST" aria-label="on Apr 29">on Apr 29</time>
+                                                                    </a>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2 prose">
+                                                            <p>super neat video about hotwire and for the first time no bugs related to hotwire during the recording(or a sharp video editing) :P. Also, 1.25X speed is the best</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="replies">
+                                                        <div data-controller="reply" class="text-xs">
+                                                            <a class="text-gray-500 ml-2" data-action="click->reply#show" href="#"><i class="fas fa-reply" aria-hidden="true"></i> Reply</a>
+                                                            <div class="forum_post">
+                                                                <form
+                                                                    class="hidden"
+                                                                    data-target="reply.form"
+                                                                    action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts"
+                                                                    accept-charset="UTF-8"
+                                                                    data-remote="true"
+                                                                    method="post"
+                                                                >
+                                                                    <input type="hidden" name="authenticity_token" value="3h62GG/8nLXiOfJfHAoJC8Jg3q1ymzFjQQdMshtgajBQz8xtMb0SZ9sDzlMiHMm5vMGfRkxv4cyXRUc0jVwYDg==" />
+                                                                    <div class="topic_1623857108">
+                                                                        <style media="screen">
+                                                                            .topic_1623857108 {
+                                                                                position: absolute !important;
+                                                                                top: -9999px;
+                                                                                left: -9999px;
+                                                                            }
+                                                                        </style>
+                                                                        <label for="forum_post_topic">If you are a human, ignore this field</label>
+                                                                        <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
+                                                                    </div>
+                                                                    <div class="form-group mt-3">
+                                                                        <textarea placeholder="Add a comment" id="comment_98567" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
+                                                                    </div>
+                                                                    <div class="form-group text-right">
+                                                                        <input value="19118" type="hidden" name="forum_post[parent_id]" />
+                                                                        <span class="inline-flex rounded-md shadow-sm">
+                                                                            <button
+                                                                                name="button"
+                                                                                type="submit"
+                                                                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                                                                                data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
+                                                                                tabindex="2"
+                                                                            >
+                                                                                Comment
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="relative inline-block text-left">
+                                                    <div>
+                                                        <button @click="open = !open" class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        x-show="open"
+                                                        style="display: none;"
+                                                        x-transition:enter="transition ease-out duration-100"
+                                                        x-transition:enter-start="transform opacity-0 scale-95"
+                                                        x-transition:enter-end="transform opacity-100 scale-100"
+                                                        x-transition:leave="transition ease-in duration-75"
+                                                        x-transition:leave-start="transform opacity-100 scale-100"
+                                                        x-transition:leave-end="transform opacity-0 scale-95"
+                                                        class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
+                                                    >
+                                                        <div class="rounded-md bg-white shadow-xs">
+                                                            <div class="py-1">
+                                                                <a
+                                                                    data-confirm="Are you sure you want to mark this post as spam?"
+                                                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                                                    rel="nofollow"
+                                                                    data-method="put"
+                                                                    href="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts/19118/report"
+                                                                >
+                                                                    Report spam
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forum_post flex flex-row mb-2 group p-4 rounded-md text-sm hover:bg-gray-50" id="forum_post_19129">
+                                                <div class="hidden lg:block lg:mr-3 flex-shrink-0">
+                                                    <a href="/users/16902">
+                                                        <img
+                                                            data-src="https://secure.gravatar.com/avatar/4e5de4125ce3e7338a4df8efe12d100b.png?height=48&amp;width=48&amp;d=mm"
+                                                            class="rounded-full"
+                                                            height="36"
+                                                            width="36"
+                                                            alt="Bilal Budhani"
+                                                            src="https://secure.gravatar.com/avatar/4e5de4125ce3e7338a4df8efe12d100b.png?height=48&amp;width=48&amp;d=mm"
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="min-w-0 flex-grow">
+                                                    <div class="">
+                                                        <div class="h6 my-0 flex justify-between mb-2">
+                                                            <div>
+                                                                <a class="text-indigo-600 font-semibold hover:text-indigo-500" href="/users/16902">
+                                                                    Bilal Budhani
+                                                                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800">
+                                                                        130 XP
+                                                                    </span>
+                                                                </a>
+                                                                <small class="text-gray-800">
+                                                                    ·
+                                                                    <a class="hover:underline" href="https://gorails.com/forum/setting-up-customer-support-models-with-hotwire-discussion#forum_post_19129">
+                                                                        <time datetime="2021-04-30T14:53:06Z" data-local="time-ago" title="April 30, 2021 at 3:53pm BST" aria-label="on Apr 30">on Apr 30</time>
+                                                                    </a>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2 prose">
+                                                            <p>Great video, This is going to be an amazing series. Looking forward to upcoming episodes.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="replies">
+                                                        <div data-controller="reply" class="text-xs">
+                                                            <a class="text-gray-500 ml-2" data-action="click->reply#show" href="#"><i class="fas fa-reply" aria-hidden="true"></i> Reply</a>
+                                                            <div class="forum_post">
+                                                                <form
+                                                                    class="hidden"
+                                                                    data-target="reply.form"
+                                                                    action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts"
+                                                                    accept-charset="UTF-8"
+                                                                    data-remote="true"
+                                                                    method="post"
+                                                                >
+                                                                    <input type="hidden" name="authenticity_token" value="hTEAvRuXjKCSADChGYXUyE+xrBBDGLvrn7HpXgzuUa8L4HrIRdYCcqs6DK0nkxR6MRDt+33sa0RJ8+LYmtIjkQ==" />
+                                                                    <div class="topic_1623857108">
+                                                                        <style media="screen">
+                                                                            .topic_1623857108 {
+                                                                                position: absolute !important;
+                                                                                top: -9999px;
+                                                                                left: -9999px;
+                                                                            }
+                                                                        </style>
+                                                                        <label for="forum_post_topic">If you are a human, ignore this field</label>
+                                                                        <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
+                                                                    </div>
+                                                                    <div class="form-group mt-3">
+                                                                        <textarea placeholder="Add a comment" id="comment_62850" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
+                                                                    </div>
+                                                                    <div class="form-group text-right">
+                                                                        <input value="19129" type="hidden" name="forum_post[parent_id]" />
+                                                                        <span class="inline-flex rounded-md shadow-sm">
+                                                                            <button
+                                                                                name="button"
+                                                                                type="submit"
+                                                                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                                                                                data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
+                                                                                tabindex="2"
+                                                                            >
+                                                                                Comment
+                                                                            </button>
+                                                                        </span>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div x-data="{ open: false }" @keydown.escape="open = false" @click.away="open = false" class="relative inline-block text-left">
+                                                    <div>
+                                                        <button @click="open = !open" class="flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        x-show="open"
+                                                        style="display: none;"
+                                                        x-transition:enter="transition ease-out duration-100"
+                                                        x-transition:enter-start="transform opacity-0 scale-95"
+                                                        x-transition:enter-end="transform opacity-100 scale-100"
+                                                        x-transition:leave="transition ease-in duration-75"
+                                                        x-transition:leave-start="transform opacity-100 scale-100"
+                                                        x-transition:leave-end="transform opacity-0 scale-95"
+                                                        class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
+                                                    >
+                                                        <div class="rounded-md bg-white shadow-xs">
+                                                            <div class="py-1">
+                                                                <a
+                                                                    data-confirm="Are you sure you want to mark this post as spam?"
+                                                                    class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+                                                                    rel="nofollow"
+                                                                    data-method="put"
+                                                                    href="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts/19129/report"
+                                                                >
+                                                                    Report spam
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forum_post">
+                                                <form class="" data-target="reply.form" action="/forum/setting-up-customer-support-models-with-hotwire-discussion/forum_posts" accept-charset="UTF-8" data-remote="true" method="post">
+                                                    <input type="hidden" name="authenticity_token" value="gAdBUsnwrQ55Qr0hvZQfADnvyQcrleQH8ybVJ4s9HHUO1jsnl7Ej3EB4gS2Dgt+yR06I7BVhNKglZN6hHQFuSw==" />
+                                                    <div class="topic_1623857108">
+                                                        <style media="screen">
+                                                            .topic_1623857108 {
+                                                                position: absolute !important;
+                                                                height: 1px;
+                                                                width: 1px;
+                                                                overflow: hidden;
+                                                            }
+                                                        </style>
+                                                        <label for="forum_post_topic">If you are a human, ignore this field</label>
+                                                        <input type="text" name="forum_post[topic]" autocomplete="off" tabindex="-1" />
+                                                    </div>
+                                                    <div class="form-group mt-3">
+                                                        <textarea placeholder="Add a comment" id="comment_52741" rows="4" data-controller="comment" data-target="comment.field" class="form-control" name="forum_post[body]"></textarea>
+                                                    </div>
+                                                    <div class="form-group text-right">
+                                                        <span class="inline-flex rounded-md shadow-sm">
+                                                            <button
+                                                                name="button"
+                                                                type="submit"
+                                                                class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                                                                data-disable-with="<i class='fa fa-spinner fa-spin mr-2'></i> Saving comment..."
+                                                                tabindex="2"
+                                                            >
+                                                                Comment
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="lg:w-4/12">
+                        </article>
+                    </main>
+                </div>
+           
+            <div class="lg:w-4/12 w-full">
                 <div class="bg-white rounded-lg mb-4 overflow-hidden shadow">
                     <!---->
                     <div class="w-full card__media"><img src="https://image.freepik.com/free-vector/abstract-binary-code-techno-background_1048-12836.jpg" class="h-48 w-96" /></div>
@@ -468,25 +483,25 @@
                     </div>
                     <!---->
                 </div>
-                <!--    <div class="bg-white shadow rounded-md p-4 md:p-4">
-            <h3 class="text-lg md:text-lg font-bold">Product App is a community of amazing product managers</h3>
-            <div class="text-gray-700 flex justify-between py-2">
-                <div>
-                    We're a place where product managers share, stay up-to-date and grow their careers.
-                </div>
-            </div>
-            <a class="flex justify-center items-center bg-blue-500 text-white px-2 py-2 hover:bg-blue-600 rounded-md font-bold">
-                <span>Create new account</span>
-            </a>
+                <div class="bg-white shadow rounded-md p-4 md:p-4">
+                    <h3 class="text-lg md:text-lg font-bold">Product App is a community of amazing product managers</h3>
+                    <div class="text-gray-700 flex justify-between py-2">
+                        <div>
+                            We're a place where product managers share, stay up-to-date and grow their careers.
+                        </div>
+                    </div>
+                    <a class="flex justify-center items-center bg-blue-500 text-white px-2 py-2 hover:bg-blue-600 rounded-md font-bold">
+                        <span>Create new account</span>
+                    </a>
 
-            <a class="flex mt-2 justify-center items-center text-blue-700 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md font-bold text-gray-600">
-                <span>Login</span>
-            </a>
-        </div> -->
+                    <a class="flex mt-2 justify-center items-center text-blue-700 hover:text-blue-700 px-2 py-2 hover:text-gray-900 hover:bg-gray-200 rounded-md font-bold text-gray-600">
+                        <span>Login</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </main>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%#= link_to 'Edit', edit_post_path(@post) %> |
+<%#= link_to 'Back', posts_path %>
