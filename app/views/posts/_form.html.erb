@@ -19,46 +19,52 @@
 </script>
 
 <div class="flex mb-2 text-gray-600 font-medium text-sm">
-  <%= form_with(model: post) do |form| %>
-    <% if post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+  
+    <%= form_with(model: post) do |form| %>
+      <div class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+        <div class="px-6 py-4">
+          <% if post.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-        <ul>
-          <% post.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="pl-10 pt-5">
-      <div class="mb-4">
-        <button class="focus:outline-none px-4 py-2 text-base text-center cursor-pointer hover:shadow-sm text-gray-900 bg-white border-gray-300 border-2 rounded-lg hover:bg-gray-100" type="button">
-          <label for="file">
-            <div class="cursor-pointer">
-            Add a cover image
+              <ul>
+                <% post.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
             </div>
-          </label>
-        </button>
+          <% end %>
 
-        <%= form.file_field :cover_image, style: "visibility: hidden;", onchange: "readURL(this);", id: "file" %>
+          <div class="pl-10 pt-5">
+            <div class="mb-4">
+              <button class="focus:outline-none px-4 py-2 text-base text-center cursor-pointer hover:shadow-sm text-gray-900 bg-white border-gray-300 border-2 font-medium rounded-lg hover:bg-gray-100" type="button">
+                <label for="file">
+                  <div class="cursor-pointer">
+                  Add a cover image
+                  </div>
+                </label>
+              </button>
+
+              <%= form.file_field :cover_image, style: "visibility: hidden;", onchange: "readURL(this);", id: "file" %>
+            </div>
+
+            <div>
+
+            <%= form.text_area :title, placeholder: "New post title here...", class: "story w-full break-words placeholder-gray-600 text-6xl resize-none focus:outline-none autoexpand overflow:hidden tracking-wide no-scrollbar text-black  text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600" %>
+
+
+            </div>
+          </div>
+
+          <div class="pl-10">
+            <%= form.rich_text_area :body, id: "message-box", placeholder: "Write your post content here...", class: "no-scrollbar p-0 pt-5 appearance-none resize-none autoexpand focus:outline-none block w-full text-gray-700 text-lg leading-tight border-2 border-none" %>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <%= form.submit "Save draft", class: "flex justify-center items-center mr-4 bg-gray-300 text-gray-600 px-4 py-2 hover:bg-gray-400 rounded-md font-bold" %>
       </div>
 
-      <div>
-
-      <%= form.text_area :title, placeholder: "New post title here...", class: "story w-full break-words placeholder-gray-600 text-6xl resize-none focus:outline-none autoexpand overflow:hidden tracking-wide no-scrollbar text-black  text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600" %>
-
-
-      </div>
-    </div>
-
-    <div class="pl-10">
-      <%= form.rich_text_area :body, id: "message-box", placeholder: "Write your post content here...", class: "no-scrollbar p-0 pt-5 appearance-none resize-none autoexpand focus:outline-none block w-full text-gray-700 text-lg leading-tight border-2 border-none" %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  <% end %>
+    <% end %>
+  
 </div>
