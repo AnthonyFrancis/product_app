@@ -197,9 +197,11 @@
 
 
                 <% @posts.each do |post| %>
-                    <article class="bg-white rounded-lg mb-4 overflow-hidden shadow">
+                    <article class="bg-white rounded-lg mb-4 overflow-hidden shadow cursor-pointer">
                         <% if post.cover_image.present? %>
-                            <img src="<%= post.cover_image %>" class="w-full h-72 object-cover" />
+                            <%= link_to post, class: "w-full h-72 object-cover" do %>
+                                <img src="<%= post.cover_image %>" class="w-full h-72 object-cover" />
+                            <% end %>
                         <% end %>
                         <div class="px-6 py-4">
                             <div class="align-bottom flex-col leading-none">
@@ -211,7 +213,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 group-hover:text-indigo-600"><%= post.title %></h5>
+                            <%= link_to post do %>
+                                <h5 class="pl-10 text-3xl font-bold mt-2 mb-2 hover:text-blue-900 group-hover:text-indigo-600"><%= post.title %></h5>
+                            <% end %>
                             <div class="flex pl-10 mb-2 text-gray-600 font-medium text-sm">
                                 <a href="" class="p-1">#javascript</a>
                                 <a href="" class="p-1">#javascript</a>
