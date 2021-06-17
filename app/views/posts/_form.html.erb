@@ -27,23 +27,26 @@
 
     <div class="pl-10 py-5">
       <div class="mb-4">
-        <label for="file">
-          <div class="px-4 py-2 text-base text-center cursor-pointer text-gray-900 bg-white border-gray-300 border-2 rounded-lg hover:bg-gray-100">
-          Add a cover image
-          </div>
-        </label>
+        <button class="focus:outline-none px-4 py-2 text-base text-center cursor-pointer hover:shadow-sm text-gray-900 bg-white border-gray-300 border-2 rounded-lg hover:bg-gray-100" type="button">
+          <label for="file">
+            <div class="">
+            Add a cover image
+            </div>
+          </label>
+        </button>
 
         <%= form.file_field :cover_image, style: "visibility: hidden;", onchange: "readURL(this);", id: "file", class: "absolute w-full h-full" %>
       </div>
 
       <div>
-        <%= form.text_area :title, placeholder: "New post title here...", class: "break-words autoexpand resize-none overflow:hidden resize:none tracking-wide no-scrollbar text-black placeholder-gray-600 focus:outline-none text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600" %>
-      </div>
+        <%= form.text_area :title, placeholder: "New post title here...", class: "w-full break-words placeholder-gray-600 text-6xl resize-none focus:outline-none autoexpand overflow:hidden tracking-wide no-scrollbar text-black  text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600
+" %>
+      </div>         
+
     </div>
 
-    <div class="field">
-      <%= form.label :body %>
-      <%= form.text_area :body %>
+    <div class="pl-10">
+      <%= form.text_area :body, placeholder: "Write your post content here...", class: "no-scrollbar  appearance-none resize-none autoexpand focus:outline-none block w-full text-gray-700 text-lg leading-tight" %>
     </div>
 
     <div class="actions">
