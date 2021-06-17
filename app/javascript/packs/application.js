@@ -16,3 +16,6 @@ import "components/1351.js"; // FontAwesome Pro
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")
