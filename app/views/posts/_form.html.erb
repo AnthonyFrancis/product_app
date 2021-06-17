@@ -1,32 +1,53 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<style type="text/css">
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+</style>
+
+<div class="flex mb-2 text-gray-600 font-medium text-sm">
+  <%= form_with(model: post) do |form| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="pl-10 py-5">
+      <div class="mb-4">
+        <label for="file">
+          <div class="px-4 py-2 text-base text-center cursor-pointer text-gray-900 bg-white border-gray-300 border-2 rounded-lg hover:bg-gray-100">
+          Add a cover image
+          </div>
+        </label>
+
+        <%= form.file_field :cover_image, style: "visibility: hidden;", onchange: "readURL(this);", id: "file", class: "absolute w-full h-full" %>
+      </div>
+
+      <div>
+        <%= form.text_area :title, placeholder: "New post title here...", class: "break-words autoexpand resize-none overflow:hidden resize:none tracking-wide no-scrollbar text-black placeholder-gray-600 focus:outline-none text-6xl font-bold mt-2 mb-2 group-hover:text-indigo-600" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :cover_image %>
-    <%= form.file_field :cover_image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
