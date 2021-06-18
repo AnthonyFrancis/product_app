@@ -62,7 +62,7 @@
                         <article class="bg-white rounded-lg mb-4 overflow-hidden shadow cursor-pointer">
                             <% if post == @posts.first %>
                                 <%= link_to post, class: "w-full h-72 object-cover" do %>
-                                    <img src="<%= post.cover_image %>" class="w-full h-72 object-cover" />
+                                    <img src="<%= post.cover_image %>" class="w-screen h-72 object-cover" />
                                 <% end %>
                             <% end %>
                             <div class="px-6 py-4">
