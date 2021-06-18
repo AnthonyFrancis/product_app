@@ -29,7 +29,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.9', '>= 4.9.5'
-gem 'readingtime'
+gem 'figaro'
+gem 'fog-aws'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
