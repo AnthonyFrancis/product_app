@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails Kick Off!</title>
+    <title>PDM Community! 🖥🎧📱 </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,7 +17,6 @@
   <body class="flex flex-col h-screen font-sans antialiased text-gray-900">
     <p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p>
-    <%= render partial: "shared/navbar" %>
     <%= yield %>
   </body>
 </html>

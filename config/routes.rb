@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users, controllers: { registrations: "registrations" }
   resources :users, only: [:show], as: "profile"
-  root to: "pages#index"
+  root to: "pages#signup"
   # get 'pages/index'
 
   get "post" => "pages#post"
